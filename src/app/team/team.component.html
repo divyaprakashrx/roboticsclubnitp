@@ -1,0 +1,21 @@
+<div style=" background: rgb(193,190,196); background: linear-gradient(0deg, rgba(193,190,196,1) 0%, rgba(144,143,143,1) 100%); ">
+  <div class="row d-flex justify-content-center">
+    <div class="head" style="margin-top:2%;margin-bottom:2%;color:black;">Our Team</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let element of team|async" style="padding:1%;">
+      <div class="photo-card">
+        <div class="photo-background" style="background-image:url({{element.photo}});"></div>
+        <div class="photo-details">
+          <h1>{{element.name}}</h1>
+          <p>{{element.year}}</p>
+          <p>Branch:- {{element.branch}}</p>
+          <p>E-mail:-{{element.email}}</p>
+          <p>{{element.team}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

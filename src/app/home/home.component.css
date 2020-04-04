@@ -1,0 +1,9 @@
+.main {
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(116,112,119,1) 100%);
+}
+#mypic {
+  animation: load 1s ease-in;
+  top: 0;
+  opacity: 0.15;
+}

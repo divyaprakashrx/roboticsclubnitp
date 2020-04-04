@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "robotics-club-nitp"
+  },
+  "targets": {
+    "robotics-club-nitp": {
+      "hosting": {
+        "RoboticsClubNitp": [
+          "robotics-club-nitp"
+        ]
+      }
+    }
+  }
+}
