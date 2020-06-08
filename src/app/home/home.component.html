@@ -1,11 +1,48 @@
-<body class="main d-flex justify-content-center align-items-center" style="background-color:black;height:93.3vh;">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-md-6">
-      <div class="row d-flex justify-content-center"><p class="head">ROBOTICS CLUB</p></div>
-      <div class="row d-flex justify-content-center"><p class="head2">NATIONAL INSTITUTE OF TECHNOLOGY PATNA</p></div>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'" style="background-color: black; ">
+    <mat-toolbar style="color:white;">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item style="color:white" href="#">Events</a>
+      <a mat-list-item style="color:white" href="#">Projects</a>
+      <a mat-list-item style="color:white" routerLink="team">Team</a>
+      <a mat-list-item style="color:white" routerLink="about">About Us</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="main">
+    <div class="d-inline-flex justify-content-center"
+      style="overflow:hidden;width:100%;height:100%;position:absolute;z-index: -1;">
+      <img src="assets/img/arena10.png" style="width: 100vw;"></div>
+    <div class="main2">
+      <mat-toolbar style="background: transparent;">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon"><img src="assets/toggle.svg"></mat-icon>
+        </button>
+        <span><a routerLink="" style="margin-left:3vw;"><img src="assets/logo1.png" style="max-height: 50px;"
+              class="img-fluid" /></a></span>
+        <span style="flex : 1 1 auto"></span>
+        <div *ngIf="(isHandset$|async)==false">
+          <a class="navitem" routerLink="../events" routerLinkActive="active">Events</a>
+          <a class="navitem" routerLink="../projects" routerLinkActive="active">Projects</a>
+          <a class="navitem" routerLink="team" routerLinkActive="active">Team</a>
+          <a class="navitem" routerLink="about" routerLinkActive="active">About Us</a>
+        </div>
+      </mat-toolbar>
+      <div class="d-flex justify-content-center align-items-center" style="background: transparent;height: 80vh;">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="assets/logo1.png" style="width:60%;" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center align-items-center" style="background: transparent;height:13.3vh;">
+        <div class="row d-flex align-items-center justify-content-end align-items-end">
+          <div class="col-md-4">
+            <p style="color: white;font-size:3vh;font-family: 'Quicksand';font-weight: 500;">The world is of Technology and we do that.</p>
+            </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-4 d-flex justify-content-center align-items-center">
-      <img src="assets/logo1.png" class="img-fluid" />
-    </div>
-  </div>
-</body>
+  </mat-sidenav-content>
+</mat-sidenav-container>

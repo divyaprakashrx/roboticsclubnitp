@@ -13,10 +13,11 @@ background: linear-gradient(0deg, rgba(116,112,119,1) 0%, rgba(0,0,0,1) 100%); "
       <a mat-list-item style="color:white" routerLink="about">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar style="    background: rgb(116,112,119);
-    background: linear-gradient(0deg, rgba(116,112,119,1) 0%, rgba(0,0,0,1) 100%);
-">
+  <mat-sidenav-content class="main">
+    <div class="d-inline-flex justify-content-center" style="overflow:hidden;width:100%;height:100%;position:absolute;z-index: -1;">
+    <img src="assets/img/arena10.png" style="width: 100vw;"></div>
+  <div class="main2">
+    <mat-toolbar style="background: transparent;">
       <button type="button"
               aria-label="Toggle sidenav"
               mat-icon-button
@@ -24,7 +25,7 @@ background: linear-gradient(0deg, rgba(116,112,119,1) 0%, rgba(0,0,0,1) 100%); "
               *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-     <span><a routerLink="" style="font-size:1.5rem;color:white;margin-left:3vw;">ROBOTICS CLUB NITP</a></span>
+     <span><a routerLink="" style="margin-left:3vw;"><img src="assets/logo1.png" style="max-height: 50px;" class="img-fluid" /></a></span>
       <span style="flex : 1 1 auto"></span>
       <div *ngIf="(isHandset$|async)==false">
         <a class="navitem" routerLink="../events" routerLinkActive="active">Events</a>
@@ -33,7 +34,13 @@ background: linear-gradient(0deg, rgba(116,112,119,1) 0%, rgba(0,0,0,1) 100%); "
         <a class="navitem" routerLink="about" routerLinkActive="active">About Us</a>
       </div>
     </mat-toolbar>
-    <router-outlet></router-outlet>
-    <!-- Add Content Here -->
+  <div class="d-flex justify-content-center align-items-center" style="background: transparent;height: 93.3vh;">
+    <div class="row d-flex align-items-center">
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="assets/logo1.png" style="width:60%;" class="img-fluid" />
+      </div>
+    </div>
+    </div>
+  </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

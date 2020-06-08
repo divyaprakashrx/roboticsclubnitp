@@ -1,3 +1,20 @@
+.main {
+  
+background: rgba(0, 0, 0, 0.51);
+background-repeat: no-repeat;
+height: 100vh;
+padding: 0;
+}
+.main2{
+background: linear-gradient(180deg, #000000 0%, rgba(20, 19, 19, 0.7589) 16.67%, rgba(57, 55, 55, 0.64) 47.02%, rgba(26, 25, 25, 0.7) 75.48%, #000000 97.92%);
+height: 100%;
+}
+#mypic {
+  animation: load 1s ease-in;
+  top: 0;
+  opacity: 0.15;
+}
+
 .sidenav-container {
   height: 100%;
 }

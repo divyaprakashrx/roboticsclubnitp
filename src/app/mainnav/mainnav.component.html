@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container" style="background-color:aqua">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'push' : 'side'"
+      >
+    <mat-toolbar>Robotics Club NITP</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Events</a>
+      <a mat-list-item href="#">About</a>
+      <a mat-list-item href="#">Team</a>
+      <a mat-list-item href="#">Contact Us</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon"><img class="img-fluid" src="assets/img/toggle.png" /></mat-icon>
+      </button>
+      <span>ROBOTICS CLUB NITP</span>
+      <span style="flex :1 1 auto"></span>
+      <div *ngIf="(isHandset$|async)==false">
+        <a style="margin:2px 4px 2px 4px;" href="#">Events</a>
+        <a style="margin:2px 4px 2px 4px;" href="#">About</a>
+        <a style="margin:2px 4px 2px 4px;" href="#">Team</a>
+        <a style="margin:2px 4px 2px 4px;" href="#">Contact Us</a></div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

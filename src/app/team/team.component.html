@@ -1,6 +1,6 @@
-<div style=" background: rgb(193,190,196); background: linear-gradient(0deg, rgba(193,190,196,1) 0%, rgba(144,143,143,1) 100%); ">
+<div style=" background: #000;">
   <div class="row d-flex justify-content-center">
-    <div class="head" style="margin-top:2%;margin-bottom:2%;color:black;">Our Team</div>
+    <div class="head" style="margin-top:2%;margin-bottom:2%;color:white;">Our Team</div>
   </div>
   <div class="row">
     <div class="col-md-4" *ngFor="let element of team|async" style="padding:1%;">
@@ -12,7 +12,6 @@
           <p>Branch:- {{element.branch}}</p>
           <p>E-mail:-{{element.email}}</p>
           <p>{{element.team}}</p>
-
         </div>
       </div>
     </div>
