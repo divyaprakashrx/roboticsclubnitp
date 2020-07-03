@@ -1,0 +1,131 @@
+.main {
+  
+background: #000000;;
+padding: 0;
+}
+.main2{
+
+background: linear-gradient(180deg, #000000 0%, rgba(20, 19, 19, 0.7589) 16.67%, rgba(57, 55, 55, 0.64) 47.02%, rgba(26, 25, 25, 0.7) 75.48%, #000000 97.92%);
+height: 100vh;
+}
+#mypic {
+  animation: load 1s ease-in;
+  top: 0;
+  opacity: 0.15;
+}
+a{
+  font-family: 'Quicksand';
+}
+.sidenav-container {
+  height: 100%;
+}
+.navitem{
+    color:white;
+    margin-right:3vw;
+    margin-bottom:-10vh
+}
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#headtag > h1{
+  color: white;
+  font-size:4rem;
+  font-family: 'Roboto';
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-left: 15px;
+  line-height: 1;
+}
+#headtag > p{
+  color: white;
+  font-size:2rem;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  margin-left: 15px;
+}
+.piabout{
+  color: #ffffff;
+  font-family: 'Quicksand';
+  font-size:1.3rem;
+  line-height:1.2;
+  letter-spacing: 0.5;
+  margin-left: 20px;
+}
+.newstab{
+  border: 1px solid;
+  padding:20px;
+  margin-top:3vh;
+  margin-bottom: 2vh;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.newstab > p{
+  font-family: 'Quicksand';
+  font-size:1.3rem;
+  line-height:1.2;
+  letter-spacing: 0.5;
+  text-align: center;
+}
+#newshead, #eventhead, #piabouthead{
+  color: #000000;
+  font-family: 'Quicksand';
+  font-size: 3rem;
+  line-height: 1.2;
+}
+#eventhead, #piabouthead{
+  color: #ffffff;
+}
+#piheadrow{
+  margin-left: 5vh;
+}
+@media(max-width:1200px){
+  #headtag > h1 {
+  font-size:3rem;
+}
+#headtag > p {
+  font-size:1.5rem;
+}
+.piabout{
+  font-size: 1rem;
+}
+.newstab>p{
+  font-size: 1rem;
+}
+#newshead, #eventhead, #piabouthead{
+  font-size: 2.5rem;
+}
+}
+@media(max-width:768px){
+  #headtag > h1 {
+  font-size:2rem;
+}
+#headtag > p {
+  font-size:1rem;
+}
+#newshead, #eventhead, #piabouthead{
+  font-size: 1.8rem;
+}
+.piabout{
+  font-size: 0.8rem;
+}
+.newstab>p{
+  font-size: 0.8rem;
+}
+#piheadrow{
+  justify-content: center;
+  margin-left: 0;
+}
+}
