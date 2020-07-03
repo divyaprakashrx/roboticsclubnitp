@@ -1,164 +1,361 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'push' : 'side'" style="background-color: black; ">
-    <mat-toolbar style="color:white;">Menu</mat-toolbar>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'"
+    style="background-color: black;"
+  >
+    <mat-toolbar style="color: white;">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item style="color:white" href="#">Events</a>
-      <a mat-list-item style="color:white" href="#">Projects</a>
-      <a mat-list-item style="color:white" routerLink="team">Team</a>
-      <a mat-list-item style="color:white" routerLink="about">About Us</a>
+      <a mat-list-item style="color: white;" href="#">Events</a>
+      <a mat-list-item style="color: white;" href="#">Projects</a>
+      <a mat-list-item style="color: white;" routerLink="team">Team</a>
+      <a mat-list-item style="color: white;" routerLink="about">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="main">
-    <div class="justify-content-center"
-      style="overflow:hidden;width:100%;height:100vh;position:absolute;z-index: -1;">
-      <img src="assets/img/arena10.png" style="height:auto;min-width: 100vw;"></div>
+    <div
+      class="justify-content-center"
+      style="
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+      "
+    >
+      <img
+        src="assets/img/arena10.png"
+        style="height: auto; min-width: 100vw;"
+      />
+    </div>
+
     <div class="main2">
-      <mat-toolbar style="background: transparent;padding: 0px;height:15vh">
-        <span><a routerLink="" style="margin-left:3vw;"><img src="assets/logo1.png" style="max-height: 15vh;margin-bottom:-10vh"
-              class="img-fluid" /></a></span>
-        <span style="flex : 1 1 auto"></span><button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-          <mat-icon aria-label="Side nav toggle icon"><img src="assets/toggle.svg"></mat-icon>
+      <mat-toolbar style="background: transparent; padding: 0px; height: 15vh;">
+        <span
+          ><a routerLink="" style="margin-left: 3vw;"
+            ><img
+              src="assets/logo1.png"
+              style="max-height: 15vh; margin-bottom: -10vh;max-width: 40vw;"
+              class="img-fluid" /></a
+        ></span>
+        <span style="flex: 1 1 auto;"></span
+        ><button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon"
+            ><img src="assets/toggle.svg"
+          /></mat-icon>
         </button>
-        <div *ngIf="(isHandset$|async)==false">
-          <a class="navitem" routerLink="../events" routerLinkActive="active">Events</a>
-          <a class="navitem" routerLink="../projects" routerLinkActive="active">Projects</a>
-          <a class="navitem" routerLink="team" routerLinkActive="active">Team</a>
-          <a class="navitem" routerLink="about" routerLinkActive="active">About Us</a>
+        <div *ngIf="(isHandset$ | async) == false">
+          <a class="navitem" routerLink="../events" routerLinkActive="active"
+            >Events</a
+          >
+          <a class="navitem" routerLink="../projects" routerLinkActive="active"
+            >Projects</a
+          >
+          <a class="navitem" routerLink="team" routerLinkActive="active"
+            >Team</a
+          >
+          <a class="navitem" routerLink="about" routerLinkActive="active"
+            >About Us</a
+          >
         </div>
       </mat-toolbar>
-      <div class="row d-flex align-items-end" style="background: transparent;height:75vh;">
-          <div id="headtag" style="width: 100%;">
-            <h1 >Robotics Club</h1>
-            <p >National Institute of Technology Patna</p>
-            </div>
+      <div
+        class="row d-flex align-items-end"
+        style="background: transparent; height: 75vh;"
+      >
+        <div id="headtag" style="width: 100%;">
+          <h1>Robotics Club</h1>
+          <p>National Institute of Technology Patna</p>
+        </div>
       </div>
     </div>
-     <div class="row d-flex" style="background: transparent;min-height:100vh;">
-          <div class="row d-flex justify-content-center" style="padding-top: 8vh;">
-            <h1 id="eventhead">Events</h1>
-          </div>
+    <div class="row d-flex" style="background: transparent; min-height: 100vh;">
+      <div class="row d-flex justify-content-center" style="padding-top: 8vh;">
+        <h1 id="eventhead">Events</h1>
       </div>
-          <img src="assets/triangle.svg" class="img-fluid" style="height:auto;min-width: 100%;" />
-          <div class="row d-flex" style="min-height:90vh;background-color: #ffffff;padding-top:10vh">
-            <div class="row d-flex justify-content-center">
-              <h1 id="newshead">
-                News
-              </h1>
+      <div class="row d-flex justify-content-center">
+        <ngb-carousel
+          *ngIf="images"
+          [showNavigationArrows]="showNavigationArrows"
+          [showNavigationIndicators]="showNavigationIndicators"
+        >
+          <ng-template ngbSlide *ngFor="let image of images">
+            <div class="picsum-img-wrapper d-flex">
+              <img [src]="image" alt="Random slide" class="img-fluid"/>
             </div>
-            <div class="container">
-            <div class="row newstab" >
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna
-                </p>
-              </div>
-              <div class="row newstab" >
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna
-                </p>
-              </div>
-              <div class="row newstab" >
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna
-                </p>
-              </div>
-              <div class="row newstab" >
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna
-                </p>
-              </div>
-              </div>
+            <div class="carousel-caption">
+              <h3>SMDC 2.0</h3>
+              <p>Student Mechanism Design Challenge 2.0</p>
             </div>
-          <img src="assets/triangleb.svg" class="img-fluid" style="height:auto;min-width: 100%;" />
-          <div class="row d-flex" style="min-height:90vh;padding-top:10vh">
-            <div class="row d-flex" id="piheadrow">
-              <h1 id="piabouthead">
-                Few words from our PI
-              </h1>
-            </div>
-<div class="row d-flex justify-content-center align-items-center">
-  <div class="col-md-5 d-flex justify-content-center align-items-center">
-    <img src="assets/dummypic.svg" class="img-fluid" />
-  </div>
-  <div class="col-md-6">
-    <p class="piabout">
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis
-      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis
-      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis
-      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p>
-  </div>
-</div>
-          </div>
-          <div class="row d-flex justify-content-center align-items-center" style="min-height:70vh;padding-left: 10vh;padding-right: 10vh;">
-            <div class="col-md-4 justify-content-center align-items-center">
-              <div class="row d-flex justify-content-center align-items-center">
-                <img src="assets/dummypic.svg" class="img-fluid" />
-              </div><div class="row justify-content-center align-items-center" style="padding-top: 30px;">
-                <h2 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;line-height: 1;">Neelabh Dubey</h2>
-              </div>
-              <div class="row justify-content-center align-items-center">
-              <h3 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;">Secretary</h3>
-              
-              </div>
-            </div>
-            <div class="col-md-4 justify-content-center align-items-center">
-              <div class="row d-flex justify-content-center align-items-center">
-                <img src="assets/dummypic.svg" class="img-fluid" />
-              </div>
-              <div class="row justify-content-center align-items-center" style="padding-top: 30px;">
-                <h2 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;line-height: 1;">Dheeraj Kumar</h2>
-              </div>
-              <div class="row justify-content-center align-items-center">
-                <h3 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;">President</h3>
-              </div>
-            </div>
-            <div class="col-md-4 justify-content-center align-items-center">
-              <div class="row d-flex justify-content-center align-items-center">
-                <img src="assets/dummypic.svg" class="img-fluid" />
-              </div>
-              <div class="row justify-content-center align-items-center" style="padding-top: 30px;">
-                <h2 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;line-height: 1;">Sumit Kumar</h2>
-              </div>
-              <div class="row justify-content-center align-items-center">
-                <h3 style="color:#ffffff;font-family:'Quicksand';font-weight: 700;">Technical Lead</h3>
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex align-items-center justify-content-center" style="min-height:35vh;padding-top:10vh">
-            <div class="row d-flex justify-content-center align-items-end">
-              <div class="row d-flex justify-content-center">
-             <img src="assets/logo1.png" class="img-fluid" style="max-width: 300px;" />
-            </div>
-              <div class="row d-flex justify-content-center" style="margin-top: 30px;">
-                <a href="mailto:roboticsclub@nitp.ac.in"><img src="assets/mail.svg" class="img-fluid" style="width: 40px;margin-right: 5px;" /></a>
-                <a href="https://www.instagram.com/robotics_club_nitp/"><img src="assets/insta.svg" class="img-fluid" style="width: 40px;margin-left: 5px;margin-right: 5px;" /></a>
-                <a href="https://www.linkedin.com/company/robotics-club-nit-patna/"><img src="assets/linkedin.svg" class="img-fluid" style="width: 40px;margin-left: 5px;margin-right: 5px;" /></a>
-                <a href="https://www.facebook.com/robonitp/"><img src="assets/facebook.svg" class="img-fluid" style="width: 40px;margin-left: 5px;" /></a>
-              </div>
-              <div class="row d-flex justify-content-center" style="margin-top: 30px;">
-               <p style="color: #ffffff;font-size: 16px;">© Robotics Club NIT Patna 2020</p>
-              </div>
-            </div>
-           
-          </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+    <div class="row d-flex" style="min-height: 90vh; padding-top: 10vh;">
+      <div class="row d-flex" id="piheadrow">
+        <h1 id="piabouthead">
+          What we do?
+        </h1>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="assets/dummypic.svg" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <p class="piabout">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum." "Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."
+          </p>
+        </div>
+      </div>
+    </div>
+    <img
+      src="assets/triangle.svg"
+      class="img-fluid"
+      style="height: auto; min-width: 100%;"
+    />
+    <div
+      class="row d-flex"
+      style="min-height: 90vh; background-color: #ffffff; padding-top: 10vh;"
+    >
+      <div class="row d-flex justify-content-center">
+        <h1 id="newshead">
+          News
+        </h1>
+      </div>
+      <div class="container">
+        <div class="row newstab">
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna
+          </p>
+        </div>
+        <div class="row newstab">
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna
+          </p>
+        </div>
+        <div class="row newstab">
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna
+          </p>
+        </div>
+        <div class="row newstab">
+          <p>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna
+          </p>
+        </div>
+      </div>
+    </div>
+    <img
+      src="assets/triangleb.svg"
+      class="img-fluid"
+      style="height: auto; min-width: 100%;"
+    />
+    <div class="row d-flex" style="min-height: 90vh; padding-top: 10vh;">
+      <div class="row d-flex" id="piheadrow">
+        <h1 id="piabouthead">
+          Few words from our PI
+        </h1>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="assets/dummypic.svg" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <p class="piabout">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum." "Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row d-flex justify-content-center align-items-center"
+      style="min-height: 70vh; padding-left: 10vh; padding-right: 10vh;"
+    >
+      <div class="col-md-4 justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
+          <img src="assets/dummypic.svg" class="img-fluid" />
+        </div>
+        <div
+          class="row justify-content-center align-items-center"
+          style="padding-top: 30px;"
+        >
+          <h2
+            style="
+              color: #ffffff;
+              font-family: 'Quicksand';
+              font-weight: 700;
+              line-height: 1;
+            "
+          >
+            Neelabh Dubey
+          </h2>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <h3
+            style="color: #ffffff; font-family: 'Quicksand'; font-weight: 700;"
+          >
+            Secretary
+          </h3>
+        </div>
+      </div>
+      <div class="col-md-4 justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
+          <img src="assets/dummypic.svg" class="img-fluid" />
+        </div>
+        <div
+          class="row justify-content-center align-items-center"
+          style="padding-top: 30px;"
+        >
+          <h2
+            style="
+              color: #ffffff;
+              font-family: 'Quicksand';
+              font-weight: 700;
+              line-height: 1;
+            "
+          >
+            Dheeraj Kumar
+          </h2>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <h3
+            style="color: #ffffff; font-family: 'Quicksand'; font-weight: 700;"
+          >
+            President
+          </h3>
+        </div>
+      </div>
+      <div class="col-md-4 justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
+          <img src="assets/dummypic.svg" class="img-fluid" />
+        </div>
+        <div
+          class="row justify-content-center align-items-center"
+          style="padding-top: 30px;"
+        >
+          <h2
+            style="
+              color: #ffffff;
+              font-family: 'Quicksand';
+              font-weight: 700;
+              line-height: 1;
+            "
+          >
+            Sumit Kumar
+          </h2>
+        </div>
+        <div class="row justify-content-center align-items-center">
+          <h3
+            style="color: #ffffff; font-family: 'Quicksand'; font-weight: 700;"
+          >
+            Technical Lead
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row d-flex align-items-center justify-content-center"
+      style="min-height: 35vh; padding-top: 10vh;"
+    >
+      <div class="row d-flex justify-content-center align-items-end">
+        <div class="row d-flex justify-content-center">
+          <img
+            src="assets/logo1.png"
+            class="img-fluid"
+            style="max-width: 300px;"
+          />
+        </div>
+        <div
+          class="row d-flex justify-content-center"
+          style="margin-top: 30px;"
+        >
+          <a href="mailto:roboticsclub@nitp.ac.in"
+            ><img
+              src="assets/mail.svg"
+              class="img-fluid"
+              style="width: 40px; margin-right: 5px;"
+          /></a>
+          <a href="https://www.instagram.com/robotics_club_nitp/"
+            ><img
+              src="assets/insta.svg"
+              class="img-fluid"
+              style="width: 40px; margin-left: 5px; margin-right: 5px;"
+          /></a>
+          <a href="https://www.linkedin.com/company/robotics-club-nit-patna/"
+            ><img
+              src="assets/linkedin.svg"
+              class="img-fluid"
+              style="width: 40px; margin-left: 5px; margin-right: 5px;"
+          /></a>
+          <a href="https://www.facebook.com/robonitp/"
+            ><img
+              src="assets/facebook.svg"
+              class="img-fluid"
+              style="width: 40px; margin-left: 5px;"
+          /></a>
+        </div>
+        <div
+          class="row d-flex justify-content-center"
+          style="margin-top: 30px;"
+        >
+          <p style="color: #ffffff; font-size: 16px;">
+            © Robotics Club NIT Patna 2020
+          </p>
+        </div>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
