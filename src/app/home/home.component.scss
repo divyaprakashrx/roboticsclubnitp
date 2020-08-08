@@ -73,25 +73,7 @@ a{
   display: flex;
   animation: autoscroll 5s linear infinite;
 }
-@keyframes autoscroll {
-  100% { 
-    transform: translateY(-250%);  
-  }
-}
-@keyframes bounce{
-    0%{
 
-    }
-  0.2% {
-    transform: translateY(-2vh);
-  }
-    100%{
-        transform:translateY(-2vh);
-    }
-}
-.slink:hover{
-  animation: bounce 2s ease-in;
-}
 .newstab > p{
   font-family: 'Quicksand';
   font-size:1.3rem;

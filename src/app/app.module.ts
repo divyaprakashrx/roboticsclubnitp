@@ -23,6 +23,7 @@ import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FootComponent } from './foot/foot.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     HomeComponent,
     NavbarComponent,
     TeamComponent,
-    AboutComponent
+    AboutComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,
