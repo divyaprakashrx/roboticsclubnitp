@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import * as AOS from "aos";
 
 @Component({
   selector: 'app-home',
@@ -34,5 +35,5 @@ export class HomeComponent implements OnInit {
     config.showNavigationIndicators = true;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(){AOS.init();};
 }
