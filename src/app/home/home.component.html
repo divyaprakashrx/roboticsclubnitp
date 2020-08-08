@@ -33,12 +33,20 @@
     </div>
 
     <div class="main2">
-      <mat-toolbar style="background: transparent; padding: 0px; height: 15vh;">
+      <mat-toolbar
+        style="
+          background: transparent;
+          padding: 0px;
+          height: 15vh;
+          display: flexbox;
+          align-items: center;
+        "
+      >
         <span
           ><a routerLink="" style="margin-left: 3vw;"
             ><img
               src="assets/logo1.png"
-              style="max-height: 15vh; margin-bottom: -10vh;max-width: 40vw;"
+              style="max-height: 15vh; margin-bottom: -10vh; max-width: 40vw;"
               class="img-fluid" /></a
         ></span>
         <span style="flex: 1 1 auto;"></span
@@ -90,7 +98,7 @@
         >
           <ng-template ngbSlide *ngFor="let image of images">
             <div class="picsum-img-wrapper d-flex">
-              <img [src]="image" alt="Random slide" class="img-fluid"/>
+              <img [src]="image" alt="Random slide" class="img-fluid" />
             </div>
             <div class="carousel-caption">
               <h3>SMDC 2.0</h3>
@@ -144,7 +152,15 @@
     />
     <div
       class="row d-flex"
-      style="min-height: 90vh; background-color: #ffffff; padding-top: 10vh;"
+      style="
+        height: 90vh;
+        background-color: #ffffff;
+        padding-top: 10vh;
+        overflow: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      "
     >
       <div class="row d-flex justify-content-center">
         <h1 id="newshead">

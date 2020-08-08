@@ -9,10 +9,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.container {
-}
-
 @media screen and (min-width: 1200px) {
   .photo-card {
     flex-direction: row;
