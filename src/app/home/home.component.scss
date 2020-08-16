@@ -73,6 +73,11 @@ a{
   display: flex;
   animation: autoscroll 5s linear infinite;
 }
+@keyframes autoscroll {
+  100% { 
+    transform: translateY(-250%);  
+  }
+}
 
 .newstab > p{
   font-family: 'Quicksand';

@@ -1,8 +1,4 @@
-@keyframes autoscroll {
-  100% { 
-    transform: translateY(-250%);  
-  }
-}
+
 @keyframes bounce{
     0%{
 

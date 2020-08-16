@@ -7,6 +7,7 @@ import { AngularFireModule } from '@angular/fire';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { NgbModule, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ import { FootComponent } from './foot/foot.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    ScrollingModule,
     NgbModule,
     NgbCarouselModule,
     MatListModule,

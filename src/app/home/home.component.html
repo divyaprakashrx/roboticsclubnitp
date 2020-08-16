@@ -62,10 +62,10 @@
           /></mat-icon>
         </button>
         <div *ngIf="(isHandset$ | async) == false">
-          <a class="navitem" routerLink="../events" routerLinkActive="active"
+          <a class="navitem" routerLink="events" routerLinkActive="active"
             >Events</a
           >
-          <a class="navitem" routerLink="../projects" routerLinkActive="active"
+          <a class="navitem" routerLink="projects" routerLinkActive="active"
             >Projects</a
           >
           <a class="navitem" routerLink="team" routerLinkActive="active"
@@ -80,7 +80,7 @@
         class="row d-flex align-items-end"
         style="background: transparent; height: 75vh;"
       >
-        <div id="headtag" style="width: 100%;">
+        <div id="headtag" style="width: 100%;" cdkScrollable data-aos="fade-in">
           <h1>Robotics Club</h1>
           <p>National Institute of Technology Patna</p>
         </div>
@@ -92,17 +92,18 @@
       </div>
       <div class="row d-flex justify-content-center">
         <ngb-carousel
-          *ngIf="images"
+        *ngIf=events
           [showNavigationArrows]="showNavigationArrows"
           [showNavigationIndicators]="showNavigationIndicators"
         >
-          <ng-template ngbSlide *ngFor="let image of images">
-            <div class="picsum-img-wrapper d-flex">
-              <img [src]="image" alt="Random slide" class="img-fluid" />
-            </div>
-            <div class="carousel-caption">
-              <h3>SMDC 2.0</h3>
-              <p>Student Mechanism Design Challenge 2.0</p>
+          <ng-template ngbSlide *ngFor="let event of events">
+            <div class="event picsum-img-wrapper d-flex justify-content-center">
+              <div style="color: #ffffff;" class="col-md-8 col-sm-12">
+                <h2>{{event.title}}</h2>
+                <p>
+                  {{event.description}}
+                </p>
+              </div>
             </div>
           </ng-template>
         </ngb-carousel>
