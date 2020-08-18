@@ -1,1 +1,22 @@
-<p>event works!</p>
+<div style="background: #000; min-height: 100vh;">
+  <app-navbar></app-navbar>
+  <div class="row d-flex justify-content-center" style="margin-top: 8vh;">
+    <h1
+      style="
+        font-size: 3rem;
+        color: #fff;
+        font-family: 'Quicksand';
+        font-weight: bold;
+      "
+    >
+      Events
+    </h1>
+  </div>
+  <div class="row d-flex justify-content-center" *ngFor="let event of events">
+      <div class="container" style="color:#fff;">
+        <div class="row"><h1 style="font-family:'Quicksand'">{{event.title}}</h1></div>
+        <div class="row"><h2 style="font-family:'Quicksand'">{{event.description}}</h2></div>
+    </div>
+  </div>
+  <app-foot></app-foot>
+</div>

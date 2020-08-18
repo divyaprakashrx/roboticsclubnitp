@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { TeamComponent } from './team/team.component';
+import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -33,7 +34,8 @@ import { FootComponent } from './foot/foot.component';
     NavbarComponent,
     TeamComponent,
     AboutComponent,
-    FootComponent
+    FootComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +53,11 @@ import { FootComponent } from './foot/foot.component';
     NgbModule,
     NgbCarouselModule,
     MatListModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

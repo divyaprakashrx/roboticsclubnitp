@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import * as AOS from 'aos';
+import {
+  NgbCarousel,
+  NgbSlideEvent,
+  NgbSlideEventSource,
+  NgbCarouselConfig,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -18,11 +22,12 @@ export class HomeComponent implements OnInit {
       shareReplay()
     );
 
-  showNavigationArrows = true;
+  showNavigationArrows = false;
   showNavigationIndicators = true;
   events = [
     {
       title: `Arduino workshop`,
+      url: `assets/img/arduino.JPG`,
       description: `Robotics club NIT-Patna conducted a two days Arduino workshop
                   where all about Arduino, Bluetooth interfacing, and Bot
                   interfacing were discussed. The major highlights of this
@@ -36,10 +41,11 @@ export class HomeComponent implements OnInit {
                   wireless LED, building an obstacle detecting bot using IR
                   sensors, a line follower bot, and wirelessly controlled bot
                   using Android phone. After completion of the workshop,
-                  certificates were provided to all the participants.`
+                  certificates were provided to all the participants.`,
     },
     {
-      title:  `3D printing`,
+      title: `3D printing Workshop`,
+      url: `assets/img/3dprinting.jpg`,
       description: `Robotics club, NIT Patna conducted a two days Workshop on 3D
                   printing. In the workshop basics of 3D designing were
                   discussed. The participants gained a sound knowledge about the
@@ -47,20 +53,41 @@ export class HomeComponent implements OnInit {
                   access to use the 3D printer of our club to gather some ideas
                   about how to operate it, what are its specific features. It
                   was a great hands-on experience of creating stuff like
-                  Robotics arm, gear, etc for all those who participated.`
-    }
-  ]
+                  Robotics arm, gear, etc for all those who participated.`,
+    },
+    {
+      title: `ROBOWARS`,
+      url: `assets/img/robowars.jpg`,
+      description: `We conducted robowars which was a big hit.Students of different schools and 
+      colleges from patna participated.Robowars are probably among the most awaited events because 
+      of the thrill and excitement it provides.We have all grown watching transformers and it gives quite a 
+      similar feel.Robowars  had a history of attracting great audiences from different colleges over the years and it’s prize amount have always been the highest. Yesteryear,I was won by a Team from Nit Silchar.`,
+    },
+    {
+      title: `CHAKRAVYUH`,
+      url: `assets/img/chakravyuh.jpg`,
+      description: `We had a maze solving event which was based on the backdrop of Abhimanyu’s chakravyuh from Mahabharata.The bot was supposed to be abhimanyu and it had to reach to centre of the maze(or chakravyuh) using its weapons i.e, the codes in this case.It attracted a lot of audience especially from the programming  background. The fascination factor was also there because of the interesting  backdrop .`,
+    },
+    {
+      title: `THE LION’S KINGDOM `,
+      url: `assets/img/lionkingdom.jpg`,
+      description: `In lion’s Kingdom, participants had to traverse their bots through a zig zag path overcoming the obstacles.The path had holes which were meant to be filled using cubes placed along the path.This event saw maximum participation because of its straightforward demands and facile nature.`,
+    },
+  ];
+  aboutus = `Robotics club has been embodiment of innovation at NIT Patna. Being formed in year 2015-16 by Nripendra Saroj Sir ,our club boasts a glorious legacy. With our members ranging from seasoned coders to brilliant designers to hardware scientists, Our members have also represented our college at Smart India hackathon,headed by our current Captain Dheeraj Kumar Sir.We have been constantly working to enhance the students’ technical skills and making them aware of the fascinating world of automation,robotics and electronics which surrounds us.Boasting of a huge roster of exciting and engaging events, This  year’s techno-cultural  fest was nothing less than a rollercoaster ride for us.
+`;
   constructor(
     private breakpointObserver: BreakpointObserver,
     config: NgbCarouselConfig
   ) {
-    config.interval = 10000;
+    config.interval = 3000;
     config.wrap = true;
-    config.keyboard = false;
+    config.keyboard = true;
     config.pauseOnHover = false;
-    config.showNavigationArrows = true;
+    config.showNavigationArrows = false;
     config.showNavigationIndicators = true;
   }
 
-  ngOnInit(){AOS.init();};
+  ngOnInit() {
+  }
 }
