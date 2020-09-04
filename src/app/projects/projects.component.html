@@ -9,13 +9,13 @@
         font-weight: bold;
       "
     >
-      Events
+      Projects
     </h1>
   </div>
-  <div class="row d-flex justify-content-center" *ngFor="let event of events">
+  <div class="row d-flex justify-content-center" *ngFor="let project of projects">
       <div class="container" style="color:#fff;">
-        <div class="row"><h1 style="font-family:'Quicksand';font-weight:bold">{{event.title}}</h1></div>
-        <div class="row"><h2 style="font-family:'Quicksand'">{{event.description}}</h2></div>
+        <div class="row"><h1 style="font-family:'Quicksand';font-weight:bold">{{project.title}}</h1></div>
+        <div class="row"><h2 style="font-family:'Quicksand'">{{project.description}}</h2></div>
     </div>
   </div>
   <app-foot></app-foot>

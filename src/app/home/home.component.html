@@ -10,9 +10,9 @@
     <mat-toolbar style="color: white;">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item style="color: white;" routerLink="events">Events</a>
-      <!--<a mat-list-item style="color: white;" href="#">Projects</a>-->
+      <a mat-list-item style="color: white;" routerLink="projects">Projects</a>
       <a mat-list-item style="color: white;" routerLink="team">Team</a>
-      <!--<a mat-list-item style="color: white;" routerLink="about">About Us</a>-->
+      <a mat-list-item style="color: white;" routerLink="about">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="main">
@@ -47,7 +47,7 @@
             ><img
               src="assets/logo1.png"
               style="max-height: 15vh; margin-bottom: -10vh; max-width: 40vw;"
-              class="img-fluid" /></a
+              class="img-fluid"/></a
         ></span>
         <span style="flex: 1 1 auto;"></span
         ><button
@@ -65,22 +65,22 @@
           <a class="navitem" routerLink="events" routerLinkActive="active"
             >Events</a
           >
-          <!--<a class="navitem" routerLink="projects" routerLinkActive="active"
+          <a class="navitem" routerLink="projects" routerLinkActive="active"
             >Projects</a
-          >-->
+          >
           <a class="navitem" routerLink="team" routerLinkActive="active"
             >Team</a
           >
-          <!--<a class="navitem" routerLink="about" routerLinkActive="active"
+          <a class="navitem" routerLink="about" routerLinkActive="active"
             >About Us</a
-          >-->
+          >
         </div>
       </mat-toolbar>
       <div
         class="row d-flex align-items-end"
         style="background: transparent; height: 75vh;"
       >
-        <div id="headtag" style="width: 100%;" cdkScrollable data-aos="fade-in">
+        <div id="headtag" style="width: 100%;">
           <h1>Robotics Club</h1>
           <p>National Institute of Technology Patna</p>
         </div>
@@ -92,19 +92,26 @@
       </div>
       <div class="row d-flex justify-content-center">
         <ngb-carousel
-        *ngIf=events
+          *ngIf="events"
           [showNavigationArrows]="showNavigationArrows"
           [showNavigationIndicators]="showNavigationIndicators"
         >
           <ng-template ngbSlide *ngFor="let event of events">
             <div class="event picsum-img-wrapper d-flex justify-content-center">
               <div class="img-wrap">
-                <img style="height:auto;min-width: 100vw;display: flex;justify-self: center;align-self: center;" src={{event.url}} alt="" />
+                <img
+                  style="height:auto;min-width: 100vw;display: flex;justify-self: center;align-self: center;"
+                  src="{{ event.url }}"
+                  alt=""
+                />
               </div>
-              <div style="color: #ffffff;padding-bottom: 8vh;" class="col-md-8 col-sm-12">
-                <h1 class="event-title">{{event.title}}</h1>
+              <div
+                style="color: #ffffff;padding-bottom: 8vh;"
+                class="col-md-8 col-sm-12"
+              >
+                <h1 class="event-title">{{ event.title }}</h1>
                 <p class="event-body">
-                  {{event.description}}
+                  {{ event.description }}
                 </p>
               </div>
             </div>
@@ -124,7 +131,7 @@
         </div>
         <div class="col-md-6">
           <p class="piabout">
-            {{aboutus}}
+            {{ aboutus }}
           </p>
         </div>
       </div>
@@ -204,7 +211,7 @@
     <div class="row d-flex" style="min-height: 90vh; padding-top: 10vh;">
       <div class="row d-flex" id="piheadrow">
         <h1 id="piabouthead">
-          Few words from our PI
+          What we do?
         </h1>
       </div>
       <div class="row d-flex justify-content-center align-items-center">
@@ -213,27 +220,18 @@
         </div>
         <div class="col-md-6">
           <p class="piabout">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum." "Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum."
+            Does robots fascinates you and have you ever fantasized to build one
+            for yourself? The Robotics club NIT Patna is the place! The Robotics
+            club at NIT Patna strives to stimulate interest in robotics among
+            the students of the institute.Today robotics is a rapidly growing
+            field,as technological advances continue;researching,designing, and
+            building new robots serve various practical purposes.Robotics is a
+            field which is not limited to a particular branch and is way more
+            diverse than our own imagination and so is our student club.We are a
+            diverse group of robotics nerds who find roots across all academic
+            departments of the Institute. We at Robotics club believe in working
+            and growing together.You can know more about us from here. #Hail
+            Robotics.
           </p>
         </div>
       </div>
