@@ -73,6 +73,13 @@ export class HomeComponent implements OnInit {
       url: `assets/img/lionkingdom.jpg`,
       description: `In lion’s Kingdom, participants had to traverse their bots through a zig zag path overcoming the obstacles.The path had holes which were meant to be filled using cubes placed along the path.This event saw maximum participation because of its straightforward demands and facile nature.`,
     },
+    {
+      title: 'PCB designing',
+      url: 'assets/img/pcb.jpg',
+      description: `Printed Circuit Board are essential part of a electronic connections to generate a mechanical support as well. We can’t rely upon bread board for substantially increased number of components and for smaller packaging sizes of Integrated circuits .
+
+Robotics club ,NIT Patna organized a workshop on PCB Designing. This workshop focused over designing various kinds of electronic circuits and their use in making PCB Designing. Designing Software, Reference Materials, PPTs, Example sets and Study Materials were the tools provided (for the session).Concepts like :Circuit Designing, Simulation, PCB Design Structure, Component Placement and Design, Testing, Board Analysis, Fabrication output generation were discussed.`,
+    },
   ];
   aboutus = `Robotics club has been embodiment of innovation at NIT Patna. Being formed in year 2015-16 by Nripendra Saroj Sir ,our club boasts a glorious legacy. With our members ranging from seasoned coders to brilliant designers to hardware scientists, Our members have also represented our college at Smart India hackathon,headed by our current Captain Dheeraj Kumar Sir.We have been constantly working to enhance the students’ technical skills and making them aware of the fascinating world of automation,robotics and electronics which surrounds us.Boasting of a huge roster of exciting and engaging events, This  year’s techno-cultural  fest was nothing less than a rollercoaster ride for us.
 `;
@@ -88,6 +95,5 @@ export class HomeComponent implements OnInit {
     config.showNavigationIndicators = true;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

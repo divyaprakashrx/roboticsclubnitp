@@ -1,6 +1,6 @@
-<div style="background: #000; min-height: 100vh;">
+<div style="background: #000; min-height: 100vh">
   <app-navbar></app-navbar>
-  <div class="row d-flex justify-content-center" style="margin-top: 8vh;">
+  <div class="row d-flex justify-content-center" style="margin-top: 8vh">
     <h1
       style="
         font-size: 3rem;
@@ -13,9 +13,18 @@
     </h1>
   </div>
   <div class="row d-flex justify-content-center" *ngFor="let event of events">
-      <div class="container" style="color:#fff;">
-        <div class="row"><h1 style="font-family:'Quicksand';font-weight:bold">{{event.title}}</h1></div>
-        <div class="row"><h2 style="font-family:'Quicksand'">{{event.description}}</h2></div>
+    <div class="container" style="color: #fff">
+      <div class="row" style="padding-top:10vh;">
+        <h1 style="font-weight: bold;">
+          {{ event.title }}
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <h2 style="font-family: 'Quicksand'">{{ event.description }}</h2>
+        </div>
+        <div class="col-6"><img class="img-fluid" src="{{ event.url }}" /></div>
+      </div>
     </div>
   </div>
   <app-foot></app-foot>

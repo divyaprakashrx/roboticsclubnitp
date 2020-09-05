@@ -56,6 +56,13 @@ export class EventComponent implements OnInit {
       url: `assets/img/lionkingdom.jpg`,
       description: `In lion’s Kingdom, participants had to traverse their bots through a zig zag path overcoming the obstacles.The path had holes which were meant to be filled using cubes placed along the path.This event saw maximum participation because of its straightforward demands and facile nature.`,
     },
+    {
+      title: 'PCB designing',
+      url: 'assets/img/pcb.jpg',
+      description: `Printed Circuit Board are essential part of a electronic connections to generate a mechanical support as well. We can’t rely upon bread board for substantially increased number of components and for smaller packaging sizes of Integrated circuits .
+
+Robotics club ,NIT Patna organized a workshop on PCB Designing. This workshop focused over designing various kinds of electronic circuits and their use in making PCB Designing. Designing Software, Reference Materials, PPTs, Example sets and Study Materials were the tools provided (for the session).Concepts like :Circuit Designing, Simulation, PCB Design Structure, Component Placement and Design, Testing, Board Analysis, Fabrication output generation were discussed.`,
+    },
   ];
   ngOnInit() {}
 }
