@@ -7,24 +7,34 @@ background: linear-gradient(0deg, rgba(116,112,119,1) 0%, rgba(0,0,0,1) 100%); "
                >
     <mat-toolbar style="color:white;">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item style="color:white" routerLink="events">Events</a>
-      <a mat-list-item style="color:white" routerLink="projects">Projects</a>
-      <a mat-list-item style="color:white" routerLink="team">Team</a>
-      <a mat-list-item style="color:white" routerLink="about">About Us</a>
+      <a mat-list-item style="color:white" routerLink="../events">Events</a>
+      <a mat-list-item style="color:white" routerLink="../projects">Projects</a>
+      <a mat-list-item style="color:white" routerLink="../team">Team</a>
+      <a mat-list-item style="color:white" routerLink="../about">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
   <div class="main2">
-    <mat-toolbar style="background: transparent;">
-      <button type="button"
-              aria-label="Toggle sidenav"
-              mat-icon-button
-              (click)="drawer.toggle()"
-              *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-     <span><a routerLink="" style="margin-left:3vw;"><img src="assets/logo1.png" style="max-height: 50px;" class="img-fluid" /></a></span>
-      <span style="flex : 1 1 auto"></span>
+    <mat-toolbar style="background: transparent;height:200px;">
+      <span
+          ><a routerLink="" style="margin-left: 3vw;"
+            ><img
+              src="assets/logo1.png"
+              style="max-height: 100px;"
+              class="img-fluid"/></a
+        ></span>
+        <span style="flex: 1 1 auto;"></span
+        ><button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon"
+            ><img src="assets/toggle.svg"
+          /></mat-icon>
+        </button>
       <div *ngIf="(isHandset$|async)==false">
         <a class="navitem" routerLink="../events" routerLinkActive="active">Events</a>
         <a class="navitem" routerLink="../projects" routerLinkActive="active">Projects</a>

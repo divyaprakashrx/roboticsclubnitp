@@ -1,4 +1,4 @@
-.photo-card {
+/* .photo-card {
   background-color: #2d3638;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 10px 10px rgba(0, 0, 0, 0.23);
@@ -89,4 +89,48 @@
 
 .photo-details p {
   color: white;
+} */
+.team-card {
+  width: 330px;
+  height: 500px;
+  max-width: 90%;
+  background: #fcfcfc;
+  box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.25);
+  border-radius: 39px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    font-family: "Quicksand";
+    font-weight: bold;
+  }
+}
+.head{
+  margin-top: -5%; margin-bottom: 8%;margin-right:10%;color:black;
+}
+.card-col{
+  padding:2%;
+}
+.team-card-image {
+  width: 230px;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 50%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.team-card-details {
+  max-width: 90%;
+  div {
+    position: absolute;
+    img {
+      opacity: 30%;
+      max-width: 80%;
+      margin-left: -10%;
+    }
+  }
 }

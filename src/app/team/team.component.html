@@ -1,31 +1,33 @@
 
-<div style="background: #000;min-height: 100vh;">
+<div>
   <app-navbar></app-navbar>
   <div class="row d-flex justify-content-center">
-    <div class="head" style="margin-top: 2%; margin-bottom: 2%; color: white;">
+    <img style="width: 100vw;margin-top:-1%" src="assets/topback.svg" />
+  </div>
+  <div class="row d-flex justify-content-end">
+    <div class="head">
       Our Team
     </div>
   </div>
   <div class="row">
     <div
-      class="col-md-4"
+      class="col-md-4 d-flex justify-content-center card-col"
       *ngFor="let element of team | async"
-      style="padding: 1%;"
     >
-      <div class="photo-card">
-        <div
-          class="photo-background"
-          style="background-image:url({{element.photo}});"
-        ></div>
-        <div class="photo-details">
-          <h1>{{ element.name }}</h1>
+      <div class="card team-card">
+         <h1>{{ element.name }}</h1>
+      <div class="team-card-image"><img src={{element.photo}} /></div>
+        <div class="team-card-details">
+         <div class="d-flex justify-content-center">
+        <img class="img-fluid" src="assets/logoblack.png" /></div>
           <p>{{ element.year }}</p>
           <p>Branch:- {{ element.branch }}</p>
           <p>E-mail:-{{ element.email }}</p>
           <p>{{ element.team }}</p>
         </div>
-      </div>
     </div>
   </div>
+  <div class="row">
   <app-foot></app-foot>
+</div>
 </div>
