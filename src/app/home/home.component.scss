@@ -236,3 +236,13 @@ a {
     height: auto;
   }
 }
+.pi-image {
+  width: 270px;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 50%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

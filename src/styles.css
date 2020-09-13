@@ -50,3 +50,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 1rem;
   }
 }
+
+app-root>.load{
+  background-color: #000000;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+.loading {
+  margin-top: 40vh;
+  height: 100px;
+  animation: load-animate 0.8s ease infinite;
+}
+
+@keyframes load-animate {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
