@@ -27,6 +27,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FootComponent } from './foot/foot.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { NewsComponent } from './news/news.component';
+import { FirstComponent } from './news/first/first.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutComponent,
     FootComponent,
     EventComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    NewsComponent,
+    FirstComponent
   ],
   imports: [
     BrowserModule,

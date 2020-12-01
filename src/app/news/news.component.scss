@@ -1,0 +1,13 @@
+.news-thumb {
+  max-width: 90vw;
+  max-height: 200px;
+}
+.news-tab {
+  overflow-x: scroll;
+  display: flex;
+  scrollbar-width: thin;
+}
+.news-tab::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: thin;
+}

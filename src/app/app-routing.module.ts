@@ -7,13 +7,20 @@ import { TeamComponent } from './team/team.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { NewsComponent } from './news/news.component';
+import { FirstComponent } from './news/first/first.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'team', component: TeamComponent },
   { path: 'about', component: AboutComponent },
   { path: 'events', component: EventComponent },
-  { path: 'projects', component: ProjectsComponent }
+  {
+    path: 'news',
+    component: NewsComponent,
+    children: [{ path: 'first', component: FirstComponent }],
+  },
+  { path: 'projects', component: ProjectsComponent },
 ];
 
 @NgModule({

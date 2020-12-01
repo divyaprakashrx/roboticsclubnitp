@@ -1,85 +1,49 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'push' : 'side'"
-    style="background-color: black"
-  >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'" style="background-color: black">
     <mat-toolbar style="color: white">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item style="color: white" routerLink="events">Events</a>
       <a mat-list-item style="color: white" routerLink="projects">Projects</a>
       <a mat-list-item style="color: white" routerLink="team">Team</a>
+      <a mat-list-item style="color: white" routerLink="news">News</a>
       <a mat-list-item style="color: white" routerLink="about">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="main">
-    <div
-      class="justify-content-center"
-      style="
+    <div class="justify-content-center" style="
         overflow: hidden;
         width: 100%;
         height: 100vh;
         position: absolute;
         z-index: -1;
-      "
-    >
-      <img
-        src="assets/img/arena10.png"
-        style="height: auto; min-width: 100vw"
-      />
+      ">
+      <img src="assets/img/arena10.png" style="height: auto; min-width: 100vw" />
     </div>
 
     <div class="main2">
-      <mat-toolbar
-        style="
+      <mat-toolbar style="
           background: transparent;
           padding: 0px;
           height: 15vh;
           display: flexbox;
           align-items: center;
-        "
-      >
-        <span
-          ><a routerLink="" style="margin-left: 3vw"
-            ><img
-              src="assets/logo1.png"
-              style="max-height: 15vh; margin-bottom: -10vh; max-width: 40vw"
-              class="img-fluid" /></a
-        ></span>
-        <span style="flex: 1 1 auto"></span
-        ><button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()"
-          *ngIf="isHandset$ | async"
-        >
-          <mat-icon aria-label="Side nav toggle icon"
-            ><img src="assets/toggle.svg"
-          /></mat-icon>
+        ">
+        <span><a routerLink="" style="margin-left: 3vw"><img src="assets/logo1.png"
+              style="max-height: 15vh; margin-bottom: -10vh; max-width: 40vw" class="img-fluid" /></a></span>
+        <span style="flex: 1 1 auto"></span><button type="button" aria-label="Toggle sidenav" mat-icon-button
+          (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon"><img src="assets/toggle.svg" /></mat-icon>
         </button>
         <div *ngIf="(isHandset$ | async) == false">
-          <a class="navitem" routerLink="events" routerLinkActive="active"
-            >Events</a
-          >
-          <a class="navitem" routerLink="projects" routerLinkActive="active"
-            >Projects</a
-          >
-          <a class="navitem" routerLink="team" routerLinkActive="active"
-            >Team</a
-          >
-          <a class="navitem" routerLink="about" routerLinkActive="active"
-            >About Us</a
-          >
+          <a class="navitem" routerLink="events" routerLinkActive="active">Events</a>
+          <a class="navitem" routerLink="projects" routerLinkActive="active">Projects</a>
+          <a class="navitem" routerLink="team" routerLinkActive="active">Team</a>
+          <a class="navitem" routerLink="news" routerLinkActive="active">News</a>
+          <a class="navitem" routerLink="about" routerLinkActive="active">About Us</a>
         </div>
       </mat-toolbar>
-      <div
-        class="row d-flex align-items-end"
-        style="background: transparent; height: 75vh"
-      >
+      <div class="row d-flex align-items-end" style="background: transparent; height: 75vh">
         <div id="headtag" style="width: 100%">
           <h1>Robotics Club</h1>
           <p>National Institute of Technology Patna</p>
@@ -91,20 +55,14 @@
         <h1 id="eventhead">Events</h1>
       </div>
       <div class="row d-flex justify-content-center">
-        <ngb-carousel
-          *ngIf="events"
-          [showNavigationArrows]="showNavigationArrows"
-          [showNavigationIndicators]="showNavigationIndicators"
-        >
+        <ngb-carousel *ngIf="events" [showNavigationArrows]="showNavigationArrows"
+          [showNavigationIndicators]="showNavigationIndicators">
           <ng-template ngbSlide *ngFor="let event of events">
             <div class="event picsum-img-wrapper d-flex justify-content-center">
               <div class="img-wrap">
                 <img src="{{ event.url }}" alt="" />
               </div>
-              <div
-                style="color: #ffffff; padding-bottom: 8vh"
-                class="col-md-8 col-sm-12"
-              >
+              <div style="color: #ffffff; padding-bottom: 8vh" class="col-md-8 col-sm-12">
                 <h1 class="event-title">{{ event.title }}</h1>
                 <p class="event-body">
                   {{ event.description }}
@@ -130,92 +88,27 @@
         </div>
       </div>
     </div>
-    <img
-      src="assets/triangle.svg"
-      class="img-fluid"
-      style="height: auto; min-width: 100%"
-    />
-    <div
-      class="row d-flex"
-      style="height: 90vh; background-color: #ffffff; padding-top: 10vh"
-    >
+    <img src="assets/triangle.svg" class="img-fluid" style="height: auto; min-width: 100%" />
+    <div class="row d-flex" style="height: 90vh; background-color: #ffffff; padding-top: 10vh">
       <div class="row d-flex justify-content-center">
         <h1 id="newshead">News</h1>
       </div>
       <div class="row newstab">
         <div class="container">
           <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
+          </div><div class="row">
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
+          </div><div class="row">
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
+          </div><div class="row">
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
+          </div><div class="row">
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
+          </div><div class="row">
+            <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
           </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
-          <div class="row">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -285,11 +178,9 @@
         </div>
       </div>
     </div>
-    <div
-      class="row d-flex justify-content-center align-items-center"
-      style="min-height: 70vh; padding-left: 10vh; padding-right: 10vh"
-    >
-    <div class="col-md-4 lead-col justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center"
+      style="min-height: 70vh; padding-left: 10vh; padding-right: 10vh">
+      <div class="col-md-4 lead-col justify-content-center align-items-center">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="lead-image">
             <img src="assets/img/bharat.png" class="img-fluid" />
@@ -302,7 +193,7 @@
           <h3>Faculty Advisor</h3>
         </div>
       </div>
-     
+
       <div class="col-md-4 lead-col justify-content-center align-items-center">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="lead-image">

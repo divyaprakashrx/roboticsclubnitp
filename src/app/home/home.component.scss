@@ -85,13 +85,14 @@ a {
       justify-content: center;
       align-items: center;
       display: flex;
-      animation: autoscroll 5s linear infinite;
-      p {
+      animation: autoscroll 12s linear infinite;
+      a {
         font-family: "Quicksand";
         font-size: 1.3rem;
         line-height: 1.2;
         letter-spacing: 0.5;
         text-align: center;
+        text-decoration: none;
       }
     }
   }
@@ -125,8 +126,9 @@ a {
   .newstab {
     .container {
       .row {
-        p {
+        a {
           font-size: 1rem;
+          text-decoration: none;
         }
       }
     }
@@ -157,8 +159,9 @@ a {
   .newstab {
     .container {
       .row {
-        p {
+        a {
           font-size: 0.8rem;
+          text-decoration: none;
         }
       }
     }

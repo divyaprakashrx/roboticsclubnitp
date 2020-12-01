@@ -1,0 +1,22 @@
+<div style="min-height: 100vh;">
+    <app-navbar></app-navbar>
+    <div class="row d-flex justify-content-center">
+        <img style="width: 100vw;margin-top:-1%" src="assets/topback.svg" />
+    </div>
+    <div class="row d-flex justify-content-end">
+        <div class="head" style="margin-top: -5%; margin-bottom: 8%;margin-right:10%;color:black">
+            Newsletter
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="container" style="min-height:80vh;">
+            <div class="row" class="news-tab">
+                <a routerLink="first">
+                    <img src="assets/news/Month1.jpg" class="img-fluid news-thumb">
+                </a>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-foot></app-foot>
+</div>
