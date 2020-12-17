@@ -29,7 +29,7 @@ import { FootComponent } from './foot/foot.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NewsComponent } from './news/news.component';
 import { FirstComponent } from './news/first/first.component';
-
+import { SecondComponent } from './news/second/second.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +41,8 @@ import { FirstComponent } from './news/first/first.component';
     EventComponent,
     ProjectsComponent,
     NewsComponent,
-    FirstComponent
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,
