@@ -30,6 +30,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NewsComponent } from './news/news.component';
 import { FirstComponent } from './news/first/first.component';
 import { SecondComponent } from './news/second/second.component';
+import { ThirdComponent } from './news/third/third.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { SecondComponent } from './news/second/second.component';
     ProjectsComponent,
     NewsComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    ThirdComponent
   ],
   imports: [
     BrowserModule,
