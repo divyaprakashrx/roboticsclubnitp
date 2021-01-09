@@ -12,9 +12,10 @@
 
 .news-tab a{
   border:1.5px solid transparent;
+  margin:0px 3px;
 }
 
-.news-tab a{
+.news-tab a:hover{
   border:1.5px solid black;
 }
 .news-tab::-webkit-scrollbar {
