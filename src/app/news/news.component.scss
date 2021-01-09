@@ -9,6 +9,14 @@
   border-top:2px solid black;
   border-bottom:2px solid black;
 }
+
+.news-tab a{
+  border:1.5px solid transparent;
+}
+
+.news-tab a{
+  border:1.5px solid black;
+}
 .news-tab::-webkit-scrollbar {
   display: none;
   scrollbar-width: thin;
