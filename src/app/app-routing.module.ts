@@ -10,6 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NewsComponent } from './news/news.component';
 import { FirstComponent } from './news/first/first.component';
 import { SecondComponent } from './news/second/second.component';
+import { ThirdComponent } from './news/third/third.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
