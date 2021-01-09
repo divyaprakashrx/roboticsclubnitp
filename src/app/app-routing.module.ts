@@ -20,7 +20,8 @@ const routes: Routes = [
     path: 'news',
     component: NewsComponent,
     children: [{ path: 'first', component: FirstComponent },
-               { path: 'second', component: SecondComponent }],
+               { path: 'second', component: SecondComponent },
+              { path: 'third', component: ThirdComponent }],
   },
   { path: 'projects', component: ProjectsComponent },
 ];
