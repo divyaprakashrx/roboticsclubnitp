@@ -3,6 +3,8 @@
     [mode]="(isHandset$ | async) ? 'push' : 'side'" style="background-color: black">
     <mat-toolbar style="color: white">Menu</mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item style="color: white" href="https://event.roboticsclubnitp.tech/"
+        target="_blank">अ𝓫𝓱𝓲𝔂𝓾𝓽𝓱𝓱𝓪𝓷 𝟐𝟎𝟐𝟏</a>
       <a mat-list-item style="color: white" routerLink="events">Events</a>
       <a mat-list-item style="color: white" routerLink="projects">Projects</a>
       <a mat-list-item style="color: white" routerLink="team">Team</a>
@@ -22,20 +24,15 @@
     </div>
 
     <div class="main2">
-      <mat-toolbar style="
-          background: transparent;
-          padding: 0px;
-          height: 15vh;
-          display: flexbox;
-          align-items: center;
-        ">
-        <span><a routerLink="" style="margin-left: 3vw"><img src="assets/logo1.png"
-              style="max-height: 15vh; margin-bottom: -10vh; max-width: 40vw" class="img-fluid" /></a></span>
+      <mat-toolbar id="main-tool">
+        <span><a routerLink="" id="logo"><img src="assets/logo1.png" class="img-fluid" /></a></span>
         <span style="flex: 1 1 auto"></span><button type="button" aria-label="Toggle sidenav" mat-icon-button
           (click)="drawer.toggle()" *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon"><img src="assets/toggle.svg" /></mat-icon>
         </button>
         <div *ngIf="(isHandset$ | async) == false">
+          <a class="navitem" href="https://event.roboticsclubnitp.tech/" target="_blank"
+            routerLinkActive="active">अ𝓫𝓱𝓲𝔂𝓾𝓽𝓱𝓱𝓪𝓷 𝟐𝟎𝟐𝟏</a>
           <a class="navitem" routerLink="events" routerLinkActive="active">Events</a>
           <a class="navitem" routerLink="projects" routerLinkActive="active">Projects</a>
           <a class="navitem" routerLink="team" routerLinkActive="active">Team</a>
@@ -47,6 +44,32 @@
         <div id="headtag" style="width: 100%">
           <h1>Robotics Club</h1>
           <p>National Institute of Technology Patna</p>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex" style="min-height: 90vh; padding-top: 10vh">
+      <div class="row d-flex justify-content-center" style="padding-top: 8vh">
+        <h1 id="eventhead">अ𝓫𝓱𝓲𝔂𝓾𝓽𝓱𝓱𝓪𝓷 𝟐𝟎𝟐𝟏</h1>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="assets/abhi.jpg" class="img-fluid" />
+        </div>
+        <div class="col-md-6">
+          <p class="piabout">
+            "Abhiyuthhan" is a week long technical fest organised by the robotics club counting in engrossing guest
+            sessions and
+            freaky events celebrating the spirit of robotics and teamwork.<br /><br />
+            The techweek, being conducted in virtual mode, aims at providing a common platform to all the tech
+            aficionados and
+            showcase their skills and problem solving abilities. This is will also bring some thrill in pandemic induced
+            monotonic
+            life.
+            <br />
+            <br />
+            To know more and register, <a href="https://event.roboticsclubnitp.tech" target="_blank">click here</a>
+          </p>
+
         </div>
       </div>
     </div>
@@ -97,13 +120,18 @@
         <div class="container">
           <div class="row">
             <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
-          </div><div class="row">
+          </div>
+          <div class="row">
             <a routerLink="news/second">Checkout our second Newsletter on Automation and Mass Unemployment</a>
-          </div><div class="row">
+          </div>
+          <div class="row">
             <a href="https://surl.ms/vK0">Join the Orientation Session of 2020-2024 Batch</a>
-          </div><div class="row">
-            <a routerLink="news/third">Checkout our third Newsletter on How useful have robots been during this Pandemic</a>
-          </div><div class="row">
+          </div>
+          <div class="row">
+            <a routerLink="news/third">Checkout our third Newsletter on How useful have robots been during this
+              Pandemic</a>
+          </div>
+          <div class="row">
             <a routerLink="news/first">Checkout our first Newsletter on 3D Printing</a>
           </div>
           <div class="row">
@@ -123,7 +151,7 @@
         </div>
         <div class="col-md-6">
           <p class="piabout">
-        {{whatwedo}}
+            {{whatwedo}}
           </p>
         </div>
       </div>

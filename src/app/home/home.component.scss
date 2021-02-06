@@ -12,6 +12,23 @@
     #000000 97.92%
   );
   height: 100vh;
+  #main-tool {
+    background: transparent;
+    padding: 0px;
+    height: 15vh;
+    display: flexbox;
+    align-items: center;
+    span {
+      #logo {
+        margin-left: 3vw;
+        img {
+          max-height: 15vh;
+          margin-bottom: -10vh;
+          max-width: 40vw;
+        }
+      }
+    }
+  }
 }
 #mypic {
   animation: load 1s ease-in;
@@ -194,7 +211,7 @@ a {
   .event-title {
     font-size: 1.4rem;
   }
-  .piabout{
+  .piabout {
     font-size: 0.8rem;
     line-height: 1.5;
   }
