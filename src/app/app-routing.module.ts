@@ -11,6 +11,7 @@ import { NewsComponent } from './news/news.component';
 import { FirstComponent } from './news/first/first.component';
 import { SecondComponent } from './news/second/second.component';
 import { ThirdComponent } from './news/third/third.component';
+import { FourthComponent } from './news/fourth/fourth.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     component: NewsComponent,
     children: [{ path: 'first', component: FirstComponent },
                { path: 'second', component: SecondComponent },
-              { path: 'third', component: ThirdComponent }],
+              { path: 'third', component: ThirdComponent },
+               { path: 'fourth', component: FourthComponent }],
   },
   { path: 'projects', component: ProjectsComponent },
 ];
