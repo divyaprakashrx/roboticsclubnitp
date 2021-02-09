@@ -31,6 +31,7 @@ import { NewsComponent } from './news/news.component';
 import { FirstComponent } from './news/first/first.component';
 import { SecondComponent } from './news/second/second.component';
 import { ThirdComponent } from './news/third/third.component';
+import { FourthComponent } from './news/fourth/fourth.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { ThirdComponent } from './news/third/third.component';
     NewsComponent,
     FirstComponent,
     SecondComponent,
-    ThirdComponent
+    ThirdComponent,
+    FourthComponent
   ],
   imports: [
     BrowserModule,
