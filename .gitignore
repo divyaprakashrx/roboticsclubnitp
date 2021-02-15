@@ -42,7 +42,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-
+src/app/foot/foot.component.html
 # System Files
 .DS_Store
 Thumbs.db
